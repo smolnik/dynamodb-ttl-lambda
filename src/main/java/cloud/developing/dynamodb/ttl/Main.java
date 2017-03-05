@@ -32,7 +32,7 @@ public class Main {
 					ThreadLocalRandom random = ThreadLocalRandom.current();
 					int id = counter.incrementAndGet();
 					int expirationTime = random.nextInt(30 * 60) + 20 * 60;
-					t.putItem(new Item().withPrimaryKey("session-id", "session-id-" + id).with("session-data", "nothing-special").with("ttl",
+					t.putItem(new Item().withPrimaryKey("session-id", "session-id-" + id).with("session-data", "nothing special").with("ttl",
 							Instant.now().getEpochSecond() + expirationTime));
 					latch.countDown();
 					System.out.println(id);
